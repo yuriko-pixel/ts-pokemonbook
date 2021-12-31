@@ -17,7 +17,7 @@ function App() {
   if (error) return <p>Something went wrong</p>
   return (
     <div className="App">
-      {data?.results.map(i => <li>{i.name}</li>)}
+      {data?.result.map(i => <li>{i.name}</li>)}
     </div>
   );
 }
