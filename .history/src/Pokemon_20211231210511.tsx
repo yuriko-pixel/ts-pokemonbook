@@ -1,0 +1,23 @@
+import React from 'react'
+import {useQuery} from 'react-query'
+import {Pokemon} from './types'
+
+type Props = {
+    url: string
+}
+
+const Pokemon: React.FC<Props> = ({url}) => {
+
+    const getSinglePokemon = async(url: string): Promise<Pokemon> => {
+        return (await (await fetch(`${url}`)).json())
+    }
+    const {data, isLoading, error} = useQuery(['pokemon', url], () => getSinglePokemon(url))
+    
+    return (
+        <div>
+            
+        </div>
+    )
+}
+
+export default Pokemon

@@ -18,7 +18,7 @@ function App() {
   if (error) return <p>Something went wrong</p>
   return (
     <div className="App">
-      {data? <PokemonContainer pokemon={data?.results}/> : null}
+      <PokemonContainer pokemon={data?.results: []}/>
     </div>
   );
 }

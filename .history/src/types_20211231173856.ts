@@ -10,7 +10,7 @@ type result = {
     url: string;
 }
 
-export type PokemonType = {
+export type Pokemon = {
     abilities: Abilities[];
     base_experience: number;
     forms: Forms[];

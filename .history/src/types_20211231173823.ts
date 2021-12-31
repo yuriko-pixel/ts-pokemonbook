@@ -10,7 +10,7 @@ type result = {
     url: string;
 }
 
-export type PokemonType = {
+export type Pokemon = {
     abilities: Abilities[];
     base_experience: number;
     forms: Forms[];
@@ -49,8 +49,8 @@ export type PokemonType = {
             front_shiny: string;
             front_shiny_female: string;
           };
-        official_artwork? : {
-            front_default: string;
+        official-artwork? : {
+        front_default: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
         };
     };
     stats: Stats[];

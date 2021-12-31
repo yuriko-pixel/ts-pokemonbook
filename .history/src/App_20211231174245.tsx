@@ -5,7 +5,7 @@ import { useQuery } from 'react-query';
 import {RandomPokemon} from './types'
 import {getRandomPokemon} from './localFn'
 import LinearProgress from '@material-ui/core/LinearProgress';
-import PokemonContainer from './PokemonContainer'
+import Pokemon from './Pokemon'
 
 function App() {
   const { data, isLoading, error} = useQuery<RandomPokemon>(
@@ -18,7 +18,7 @@ function App() {
   if (error) return <p>Something went wrong</p>
   return (
     <div className="App">
-      {data? <PokemonContainer pokemon={data?.results}/> : null}
+      {data?.results.map(i => <Pokemon />)}
     </div>
   );
 }
