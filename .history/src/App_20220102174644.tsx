@@ -7,10 +7,6 @@ import {getRandomPokemon} from './localFn'
 import LinearProgress from '@material-ui/core/LinearProgress';
 import PokemonContainer from './PokemonContainer'
 
-const defaultState = {
-  pokedex: [0],
-  addPokedex: () => {}
-};
 interface PokeContextInterface {
   pokedex: number[];
   addPokedex: (id: number) => void;
@@ -25,6 +21,14 @@ function App() {
   function addPokedex(id: number) {
     setPokedex([...pokedex, id])
   }
+  
+  
+  const defaultState = {
+    pokedex: [0],
+  };
+  
+  
+  
 
   const { data, isLoading, error} = useQuery<RandomPokemon>(
     'pokemon',

@@ -5,13 +5,27 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from 'react-query';
 
+interface PokeContextInterface {
+  id: number;
+  url: string;
+  setPokedex: ({id: number, url: string}) 
+}
+
+const PokeContext = createContext<PokeContextInterface | null>(null);
+
+const PokeContextValue: PokeContextInterface = {
+  id: 0,
+  url: "tekito"
+};
 
 const client = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={client}>
+      <PokeContext.Provider value={PokeContextValue}>
         <App />
+      </PokeContext.Provider>
     </QueryClientProvider>
     
   </React.StrictMode>,

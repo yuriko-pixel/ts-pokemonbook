@@ -1,6 +1,5 @@
 import React, {useContext} from 'react'
 import Pokemon from './Pokemon'
-import {PokeContext} from './App'
 
 type PokeResults = {
     name: string;
@@ -11,13 +10,13 @@ type Props = {
 }
 
 const PokemonContainer: React.FC<Props> = ({pokemon}) => {
-    const { pokedex, addPokedex } = useContext(PokeContext)
+    const { count, increment } = useContext(PokeContext)
     return (
         <>
             <h1>Pokemon</h1>
             <p>Wanna create your own Pokemon list?</p>
             <p>Just press + button next to Pokemon!</p>
-            <button onClick={() => addPokedex(1)}>+</button>
+            <button onClick={() => increment()}>+</button>
             <ul style={{display: 'flex', flexWrap: 'wrap', margin: '0px 100px'}}>
                 {pokemon.map(i => <Pokemon url={i.url} />)}
             </ul>

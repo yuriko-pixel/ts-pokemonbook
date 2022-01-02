@@ -9,7 +9,7 @@ import PokemonContainer from './PokemonContainer'
 
 const defaultState = {
   pokedex: [0],
-  addPokedex: () => {}
+  addPokedex: (0) => {}
 };
 interface PokeContextInterface {
   pokedex: number[];

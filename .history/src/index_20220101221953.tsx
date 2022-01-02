@@ -5,6 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from 'react-query';
 
+interface PokeContextInterface {
+  id: number;
+  url: string;
+  setPokedex: () => {}
+}
+
+const PokeContext = createContext<PokeContextInterface | null>(null);
 
 const client = new QueryClient();
 

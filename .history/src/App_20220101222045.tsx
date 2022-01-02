@@ -1,4 +1,4 @@
-import React, {useState, createContext} from 'react';
+import React, {createContext} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { useQuery } from 'react-query';
@@ -7,25 +7,18 @@ import {getRandomPokemon} from './localFn'
 import LinearProgress from '@material-ui/core/LinearProgress';
 import PokemonContainer from './PokemonContainer'
 
-const defaultState = {
-  pokedex: [0],
-  addPokedex: () => {}
-};
+
 interface PokeContextInterface {
-  pokedex: number[];
-  addPokedex: (id: number) => void;
+  id: number;
+  url: string;
+  setPokedex: () => {}
 }
 
-export const PokeContext = React.createContext<PokeContextInterface>(defaultState);
+const PokeContext = createContext<PokeContextInterface | null>(null);
 
 function App() {
+  const [pokedex, setPokedex] = React.useState({});
   
-  const [pokedex, setPokedex] = useState<number[]>([])
-
-  function addPokedex(id: number) {
-    setPokedex([...pokedex, id])
-  }
-
   const { data, isLoading, error} = useQuery<RandomPokemon>(
     'pokemon',
     getRandomPokemon
@@ -36,9 +29,8 @@ function App() {
   if (error) return <p>Something went wrong</p>
   return (
     <div className="App">
-      <PokeContext.Provider value={{pokedex, addPokedex}}>
-        {pokedex}
-        {data? <PokemonContainer pokemon={data?.results}/> : null}
+      <PokeContext.Provider value={{id, url, setPokedex}}}>
+      {data? <PokemonContainer pokemon={data?.results}/> : null}
       </PokeContext.Provider>
     </div>
   );

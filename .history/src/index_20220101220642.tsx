@@ -5,6 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from 'react-query';
 
+interface AppContextInterface {
+  name: string;
+  url: string;
+}
+
+const AppContext = React.createContext<AppContextInterface | null>(null);
+
+const PokeContext: AppContextInterface = {
+  name: "Using React Context in a Typescript App",
+  url: "tekito"
+};
+
+export const Pokedex = createContext();
+
 
 const client = new QueryClient();
 

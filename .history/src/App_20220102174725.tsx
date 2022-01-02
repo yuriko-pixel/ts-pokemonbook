@@ -9,7 +9,6 @@ import PokemonContainer from './PokemonContainer'
 
 const defaultState = {
   pokedex: [0],
-  addPokedex: () => {}
 };
 interface PokeContextInterface {
   pokedex: number[];
@@ -25,6 +24,12 @@ function App() {
   function addPokedex(id: number) {
     setPokedex([...pokedex, id])
   }
+  
+  
+  
+  
+  
+  
 
   const { data, isLoading, error} = useQuery<RandomPokemon>(
     'pokemon',

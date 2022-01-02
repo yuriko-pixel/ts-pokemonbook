@@ -1,11 +1,12 @@
 import React from 'react'
 import {useQuery} from 'react-query'
 import {PokemonType} from './types'
-
-
+import { useSelector, TypedUseSelectorHook } from 'react-redux';
 type Props = {
     url: string
 }
+
+export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 const Pokemon: React.FC<Props> = ({url}) => {
 

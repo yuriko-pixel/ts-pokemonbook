@@ -7,21 +7,21 @@ import {getRandomPokemon} from './localFn'
 import LinearProgress from '@material-ui/core/LinearProgress';
 import PokemonContainer from './PokemonContainer'
 
-const defaultState = {
-  pokedex: [0],
-  addPokedex: () => {}
-};
-interface PokeContextInterface {
-  pokedex: number[];
-  addPokedex: (id: number) => void;
-}
 
-export const PokeContext = React.createContext<PokeContextInterface>(defaultState);
 
 function App() {
   
   const [pokedex, setPokedex] = useState<number[]>([])
-
+  interface PokeContextInterface {
+    pokedex: number[];
+    addPokedex: (id: number) => void;
+  }
+  
+  const defaultState = {
+    pokedex: [0],
+  };
+  
+  const PokeContext = React.createContext<PokeContextInterface>(defaultState);
   function addPokedex(id: number) {
     setPokedex([...pokedex, id])
   }

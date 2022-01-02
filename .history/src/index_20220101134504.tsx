@@ -1,17 +1,22 @@
-import React, {createContext} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from 'react-query';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
+const store = createStore({rootReducer});
 
 const client = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={client}>
+      <Provider store={store}>
         <App />
+      </Provider>
     </QueryClientProvider>
     
   </React.StrictMode>,

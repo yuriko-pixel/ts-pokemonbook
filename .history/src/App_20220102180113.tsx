@@ -9,11 +9,11 @@ import PokemonContainer from './PokemonContainer'
 
 const defaultState = {
   pokedex: [0],
-  addPokedex: () => {}
+  addPokedex: (id: 0) => {}
 };
 interface PokeContextInterface {
   pokedex: number[];
-  addPokedex: (id: number) => void;
+  addPokedex: (id: number) => {};
 }
 
 export const PokeContext = React.createContext<PokeContextInterface>(defaultState);

@@ -5,13 +5,26 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from 'react-query';
 
+interface AppContextInterface {
+  name: string;
+  url: string;
+}
+
+const PokeContext = React.createContext<AppContextInterface | null>(null);
+
+const PokeContextValue: AppContextInterface = {
+  name: "Using React Context in a Typescript App",
+  url: "tekito"
+};
 
 const client = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={client}>
+      <PokeContext.Provider value={PokeContextValue}>
         <App />
+      </PokeContext.Provider>
     </QueryClientProvider>
     
   </React.StrictMode>,

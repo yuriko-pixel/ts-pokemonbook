@@ -2,10 +2,11 @@ import React from 'react'
 import {useQuery} from 'react-query'
 import {PokemonType} from './types'
 
-
 type Props = {
     url: string
 }
+
+export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 const Pokemon: React.FC<Props> = ({url}) => {
 
