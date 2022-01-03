@@ -20,7 +20,7 @@ const Pokemon: React.FC<Props> = ({url}) => {
                 <div style={{display: 'flex', flexWrap: 'wrap'}}>
                     <img src={data.sprites.other?.dream_world.front_default} style={{width: 250, maxHeight: 200}} />
                     <span style={{textAlign: 'center', width: 300, marginTop: 15}}>{data.name}</span>
-                    <button style={{textAlign: 'center'}} onClick={() => addPokedex(data.id)}>Add</button>
+                    <button style={{textAlign: 'center'}}>Add</button>
                 </div>
                 : null}
         </div>

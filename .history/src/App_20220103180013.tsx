@@ -7,7 +7,6 @@ import {getRandomPokemon} from './localFn'
 import LinearProgress from '@material-ui/core/LinearProgress';
 import PokemonContainer from './PokemonContainer'
 import Pokedex from './Pokedex';
-import {Link} from 'react-router-dom'
 
 const defaultState = {
   pokedex: [0],
@@ -41,7 +40,6 @@ function App() {
     <div className="App">
       <PokeContext.Provider value={{pokedex, addPokedex}}>
         {pokedex}
-        <Link to="/pokemon">Pokedex</Link>
         {data? <PokemonContainer pokemon={data?.results}/> : null}
       </PokeContext.Provider>
     </div>

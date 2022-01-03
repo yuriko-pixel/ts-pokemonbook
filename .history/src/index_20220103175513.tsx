@@ -14,15 +14,14 @@ const client = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
-     <QueryClientProvider client={client}>
     <BrowserRouter>
     <Routes>
-   
-    <Route element={<App/>} path="/"></Route>
-    
+    <QueryClientProvider client={client}>
+      <App/>
+    </QueryClientProvider>
     </Routes>
     </BrowserRouter>
-    </QueryClientProvider>
+    
    
   </React.StrictMode>,
   document.getElementById('root')

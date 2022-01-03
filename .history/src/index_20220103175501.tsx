@@ -9,19 +9,16 @@ import { Router } from 'react-router-dom';
 import routes from './routes'
 
 import {Link, Route, BrowserRouter, Routes} from 'react-router-dom'
-
 const client = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
-     <QueryClientProvider client={client}>
     <BrowserRouter>
     <Routes>
-   
-    <Route element={<App/>} path="/"></Route>
-    
     </Routes>
     </BrowserRouter>
+    <QueryClientProvider client={client}>
+      <App/>
     </QueryClientProvider>
    
   </React.StrictMode>,

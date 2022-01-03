@@ -18,7 +18,7 @@ ReactDOM.render(
     <BrowserRouter>
     <Routes>
    
-    <Route element={<App/>} path="/"></Route>
+      <Route exact="true" path="/"><App/><Route/>
     
     </Routes>
     </BrowserRouter>

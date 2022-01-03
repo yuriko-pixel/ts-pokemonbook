@@ -1,6 +1,6 @@
 import React, {createContext} from 'react';
-import './index.css';
 import ReactDOM from 'react-dom';
+import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from 'react-query';
@@ -8,22 +8,16 @@ import Pokedex from './Pokedex';
 import { Router } from 'react-router-dom';
 import routes from './routes'
 
-import {Link, Route, BrowserRouter, Routes} from 'react-router-dom'
-
 const client = new QueryClient();
+const history = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>
-     <QueryClientProvider client={client}>
-    <BrowserRouter>
-    <Routes>
-   
-    <Route element={<App/>} path="/"></Route>
-    
-    </Routes>
-    </BrowserRouter>
+    <Router >
+    <QueryClientProvider client={client}>
+      {routes}
     </QueryClientProvider>
-   
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

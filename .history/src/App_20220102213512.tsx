@@ -37,15 +37,14 @@ function App() {
   if (isLoading) return <LinearProgress />
   if (error) return <p>Something went wrong</p>
   return (
-    
     <div className="App">
+      <Route path="/pokedex"><Pokedex/></Route>
       <PokeContext.Provider value={{pokedex, addPokedex}}>
         {pokedex}
-        <Link to="/pokemon">Pokedex</Link>
+        <Link to="./pokdex">Pokedex</Link>
         {data? <PokemonContainer pokemon={data?.results}/> : null}
       </PokeContext.Provider>
     </div>
-   
   );
 }
 
