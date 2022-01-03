@@ -1,10 +1,10 @@
 import React, {createContext} from 'react';
 import './index.css';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from 'react-query';
-import Pokedex from './components/Pokedex';
+import Pokedex from './Pokedex';
 import { Router } from 'react-router-dom';
 
 import {Link, Route, BrowserRouter, Routes} from 'react-router-dom'
@@ -17,8 +17,8 @@ ReactDOM.render(
     <BrowserRouter>
     <Routes>
    
-    <Route element={<App/>} path="/"/>
-    <Route element={<Pokedex/>} path="/pokedex"/>
+    <Route element={<App/>} path="/"></Route>
+    
     </Routes>
     </BrowserRouter>
     </QueryClientProvider>
