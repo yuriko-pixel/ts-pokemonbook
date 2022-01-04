@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from 'react-query';
 import Pokedex from './components/Pokedex';
 import { Router } from 'react-router-dom';
-import {AppContainer} from './components/AppContainer'
+
 import {Link, Route, BrowserRouter, Routes} from 'react-router-dom'
 
 const client = new QueryClient();
@@ -14,14 +14,12 @@ const client = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
      <QueryClientProvider client={client}>
-       <AppContainer>
-       <BrowserRouter>
-        <Routes>
-          <Route element={<App/>} path="/"/>
-          <Route element={<Pokedex/>} path="/pokedex"/>
-        </Routes>
-      </BrowserRouter>
-      </AppContainer>
+    <BrowserRouter>
+    <Routes>
+    <Route element={<App/>} path="/"/>
+    <Route element={<Pokedex/>} path="/pokedex"/>
+    </Routes>
+    </BrowserRouter>
     </QueryClientProvider>
    
   </React.StrictMode>,

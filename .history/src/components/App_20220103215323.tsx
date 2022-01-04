@@ -10,11 +10,14 @@ import {Link} from 'react-router-dom'
 
 
 function App() {
+  
+  
 
   const { data, isLoading, error} = useQuery<RandomPokemon>(
     'pokemon',
     getRandomPokemon
   )
+  // console.log(data)
 
   if (isLoading) return <LinearProgress />
   if (error) return <p>Something went wrong</p>

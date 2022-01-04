@@ -23,6 +23,7 @@ const Pokemon: React.FC<Props> = ({url}) => {
     const { pokedex, addPokedex } = useContext(PokeContext)
 
     const {data, isLoading, error} = useQuery(['pokemon', url], () => getSinglePokemonbyUrl(url))
+    console.log(pokedex)
     return (
         <div style={{width: 300, height: 300}}>
             {data? 
