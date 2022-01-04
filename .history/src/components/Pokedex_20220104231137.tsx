@@ -14,14 +14,13 @@ console.log(data)
     return (
        <>
         <h1>Your Pokedex</h1>
-        
         {data?.map(i => 
             <>
             <img src={i.sprites.other?.dream_world.front_default} />
             <span>{i.name}</span>
             </>
         )}
-        <Link to="/">Home</Link>
+        <Link to="/">Home<Link/>
        </>
     )
 }   

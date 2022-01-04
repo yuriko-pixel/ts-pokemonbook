@@ -9,23 +9,13 @@ type Props = {
     pokemon: PokeResults[]
 }
 
-const nonShowStyle = {
-    display: 'none'
-}
-
-const showStyle = {
-    display: 'block'
-}
-
 const PokemonContainer: React.FC<Props> = ({pokemon}) => {
     const [added, setAdded] = React.useState(false)
-
     return (
         <>
             <h1>Pokemon</h1>
             <p>Wanna create your own Pokemon list?</p>
             <p>Just press + button next to Pokemon!</p>
-            <p style={added? nonShowStyle : showStyle}>Added!</p>
             <ul style={{display: 'flex', flexWrap: 'wrap', margin: '0px 100px'}}>
                 {pokemon.map(i => <Pokemon url={i.url} />)}
             </ul>

@@ -21,7 +21,6 @@ export const AppContainer: React.FC = ({children}) => {
     const [pokedex, setPokedex] = useState<number[]>([])
 
     function addPokedex(id: number) {
-        if(pokedex.includes(id)) return;
         setPokedex([...pokedex, id])
     }
 
